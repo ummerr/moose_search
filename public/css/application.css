@@ -82,7 +82,7 @@ header {
 header h1 {
   display: inline;
   font-size: 1.5em;
-  padding: 3% 10%;
+  padding: 2% 10%;
   border: solid;
   border-width: 2px;
   border-color: #0066CC;
@@ -100,7 +100,7 @@ header h2 {
   font-style: italic;
   color: #999999;
   font-family: 'HelveticaNeue-Light', sans-serif;
-  padding: 3%;
+  padding: 2%;
 }
 
 h3 {

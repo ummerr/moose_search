@@ -1,10 +1,14 @@
 <header><h1>Welcome to Moose Search</h1></header>
 
+<p><em>A place for moose-sized searches.</em></p>
+
 
 <div class="button2">
-
-  <input type="button" value="Login" onclick="location.href='/login'">
-
+  <% if current_user %>
+    <input type="button" value="Logout" onclick="location.href='/logout'">
+  <% else %>
+    <input type="button" value="Login" onclick="location.href='/login'">
+  <% end %>
 </div>
 
 <div class="button2">
@@ -14,10 +18,4 @@
 </div>
 
 
-      <div id="login-toolbar">
-        <% if current_user %>
-          <a href="/logout">Logout</a>
-        <% else %>
-          <a href="/login">Login</a>
-        <% end %>
-      </div>
+
