@@ -1,1 +1,21 @@
-Welcome to my site!
+<header><h1>Welcome to Moose Search</h1></header>
+
+<p><em>A place for moose-sized searches.</em></p>
+
+
+<div class="button2">
+  <% if current_user %>
+    <input type="button" value="Logout" onclick="location.href='/logout'">
+  <% else %>
+    <input type="button" value="Login" onclick="location.href='/login'">
+  <% end %>
+</div>
+
+<div class="button2">
+
+  <input type="button" value="Signup" onclick="location.href='/signup'">
+
+</div>
+
+
+
