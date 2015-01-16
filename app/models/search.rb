@@ -3,8 +3,8 @@ class Search < ActiveRecord::Base
   before_save :get_search_results
 
 
-  def get_search_results string
-    self.youtube_url = Youtube.youtube_search(string)
+  def get_search_results
+    self.youtube_url = Youtube.youtube_search(self.term)
   end
 
 end
