@@ -1,6 +1,6 @@
-/* CSS declarations go here */
-body {font-family: Vollkorn; font-size: 160%; line-height: 160%; }
-h1, h2, h3, h4, h5, h6 {font-family: "HelveticaNeue Light"; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: #36AECC; font-style: italic; font-weight: 400;}
+/*
+body {font-family: "HelveticaNeue-Light"; font-size: 160%; line-height: 160%; }
+h1, h2, h3, h4, h5, h6 {font-family: "HelveticaNeue-Light"; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: #36AECC; font-style: italic; font-weight: 400;}
 h1 {font-size: 1.8em;}
 h2 {font-size: 1.6em;}
 h3 {font-size: 1.4em;}
@@ -31,7 +31,7 @@ footer { font-size: 0.7em; margin-top: 2em;}
 #content { margin: 0 auto; padding: 0 1em; max-width: 37em; position: relative; width: 61.8%;}
 
 a {
-    color: #36AECC;
+    color: #666666;
     text-decoration: none;
 }
 
@@ -44,9 +44,7 @@ a:hover {
     text-decoration: underline;
 }
 
-.logo {
-  height: 2em;
-}
+
 
 code {
     font-family: Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
@@ -64,4 +62,124 @@ code {
     line-height: 1.4em;
     margin-left: -1em;
     overflow: auto;
+}
+.logo {
+  height: 7em;
+}*/
+
+
+html, body {
+  margin: 40px auto;
+  width: 600px;
+  font-family: 'HelveticaNeue-Light', sans-serif;
+  text-align: center;
+}
+
+header {
+  margin: 0 0 50px;
+}
+
+header h1 {
+  display: inline;
+  font-size: 1.5em;
+  background-color: #0066CC;
+  padding: 3% 10%;
+  color: #ffffff;
+}
+
+header h1 a:link, header h1 a:visited {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+header h2 {
+  font-size: 1em;
+  font-style: italic;
+  color: #999999;
+  font-family: 'HelveticaNeue-Light', sans-serif;
+  padding: 3%;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+p {
+  margin-bottom: 5%;
+}
+
+img {border: none;}
+
+table {
+    margin: 7% 0 2% 0;
+    border: 1px solid #333333;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr {
+    margin: 5% 15%;
+    width: 60%;
+}
+
+th {
+    text-align: center;
+    padding: 1.5%;
+    border: 1px solid #B2B2B2;
+    background-color: #E6E6E6;
+}
+
+td {
+   padding: 5%;
+   border: 1px solid #B2B2B2;
+}
+
+.logo {
+  height: 7em;
+}
+
+.description {
+    text-align: left;
+    vertical-align: baseline;
+    width: 60%;
+}
+
+.commands {
+  display: inline-block;
+  margin: 0 1% 5% 1%;
+  float: right;
+}
+
+.button {
+  margin: 2% 1% 5% 1%;
+  display: block;
+  float: right;
+}
+
+.button2 {
+  margin: 2% 1% 5% 1%;
+  display: block;
+}
+
+.edit_short {
+  width: 60%;
+  margin-bottom: 5%;
+  padding: 1% 3%;
+}
+
+.edit_long {
+  width: 60%;
+  height: 100px;
+  margin-bottom: 5%;
+  padding: 1% 3%;
+}
+
+footer {
+  margin: 15% 0;
+  display: block;
+  position: relative;
+}
+
+#main {
+  margin: 0 0 20px;
 }

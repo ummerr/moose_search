@@ -1,5 +1,23 @@
-<h1>Welcome to Moose Search</h1>
+<header><h1>Welcome to Moose Search</h1></header>
 
 
-<div class="button">
+<div class="button2">
+
+  <input type="button" value="Login" onclick="location.href='/login'">
+
 </div>
+
+<div class="button2">
+
+  <input type="button" value="Signup" onclick="location.href='/signup'">
+
+</div>
+
+
+      <div id="login-toolbar">
+        <% if current_user %>
+          <a href="/logout">Logout</a>
+        <% else %>
+          <a href="/login">Login</a>
+        <% end %>
+      </div>
