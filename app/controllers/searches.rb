@@ -3,12 +3,15 @@ get '/search/' do
   erb #search_bar_page
 end
 
-get '/search/:id' do
+get '/search' do
 
-  erb :'search/show'
+  erb :'searches/all'
 end
 
-get '/search/all' do
+get '/search/:string' do |string|
+    search = Youtube.new
+    @result = search.youtube_search(string)
+  erb :'searches/all'
 
-  erb :'search/'
 end
+
