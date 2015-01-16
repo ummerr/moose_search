@@ -1,4 +1,4 @@
-get '/search' do
+get '/search/?' do
 
   erb :'search/main'
 end
