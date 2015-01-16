@@ -1,6 +1,6 @@
 get '/search' do
 
-  erb #search_bar_page
+  erb :'search/main'
 end
 
 get '/search/:id' do
