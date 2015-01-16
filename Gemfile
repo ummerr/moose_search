@@ -30,4 +30,6 @@ end
 
 group :test, :development do
   gem 'factory_girl'
+  gem 'natedaiger-youtube-g'
+  gem 'dotenv'
 end
