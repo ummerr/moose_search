@@ -1,5 +1,11 @@
 <div class="all">
 
+  <% @searches.each do  |search| %>
+    <%= erb :'search/show' %>
+  <% end %>
 
+  <div class="button2">
+    <input type="button" value="Moose Search" onclick="location.href='/search'">
+  </div>
 
 </div>

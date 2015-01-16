@@ -82,14 +82,17 @@ header {
 header h1 {
   display: inline;
   font-size: 1.5em;
-  background-color: #0066CC;
   padding: 3% 10%;
-  color: #ffffff;
+  border: solid;
+  border-width: 2px;
+  border-color: #0066CC;
+  color: #333333;
+  font-weight: 500;
 }
 
 header h1 a:link, header h1 a:visited {
   text-decoration: none;
-  color: #ffffff;
+  color: #999999;
 }
 
 header h2 {
@@ -136,6 +139,9 @@ td {
 
 .logo {
   height: 7em;
+}
+.search_icon {
+  height: 2em;
 }
 
 .description {
