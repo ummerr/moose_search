@@ -4,23 +4,18 @@ get '/search' do
 end
 
 get '/search/:id' do
+  @search = Search.find(id: params[:id])
   erb :'search/show'
 end
 
 post '/search' do
-  new_search = Search.new(params[:search])
+  new_search = Search.create(params[:search])
   current_user.searches << new_search
-  @search = Search.find(new_search.id)
 
   redirect '/search/#{new_search.id}'
 end
 
-# get '/search/:name' do
-#   @
-# end
-
 get '/search/all' do
-  @searches = Search.all
-
+  @searches = current_user.searches
   erb :'search/all'
 end
