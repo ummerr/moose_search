@@ -22,6 +22,8 @@ gem 'bcrypt'
 
 gem 'pry-byebug'
 
+gem 'twitter'
+
 
 group :test do
   gem 'shoulda-matchers'
