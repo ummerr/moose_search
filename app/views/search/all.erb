@@ -1,12 +1,18 @@
+<%= erb :'/search/main' %>
+
 <div class="all">
 
-  <% @searches.each do  |search| %>
-    <a href="/search/<%= search.id %>"><h1><%= search.term %></h1>
-    <h3><%= search.date_posted %></h3></a>
-  <% end %>
-
-  <div class="button2">
-    <input type="button" value="Moose Search" onclick="location.href='/search'">
-  </div>
+  <table>
+    <% @searches.each do  |search| %>
+      <tr>
+        <th>
+          <a href="/search/<%= search.id %>"><h1><%= search.term %></h1></a>
+        </th>
+        <td>
+          <%= search.date_posted %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 
 </div>
