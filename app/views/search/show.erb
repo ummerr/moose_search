@@ -7,12 +7,20 @@
 
       <% unless @search.tweet == nil %>
         <h4>Twitter:</h4>
+        <% @tweet = @search.tweet %>
+        <%= erb :'tweet/show' %>
       <% end %>
 
       <% unless @search.youtube == nil %>
         <h4>Youtube:</h4>
           <%  @youtube = @search.youtube %>
           <%= erb :'youtube/show' %>
+      <% end %>
+
+      <% unless @search.reddit == nil %>
+        <h4>Reddit:</h4>
+          <%  @reddit = @search.reddit %>
+          <%= erb :'reddit/show' %>
       <% end %>
 
   <% end %>

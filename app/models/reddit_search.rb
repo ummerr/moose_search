@@ -1,6 +1,6 @@
-require 'json'
-
-module Reddit
+class RedditSearch < ActiveRecord::Base
+  
+  belongs_to :search
 
   def self.search(term, result_number)
     suffix = term.split(' ').join('+') + "&restrict_sr=off&sort=relevance&t=all"
@@ -13,4 +13,3 @@ module Reddit
   end
 
 end
-

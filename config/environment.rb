@@ -28,6 +28,8 @@ require 'youtube_g'
 
 require 'pry-byebug'
 
+require 'twitter'
+
 require 'dotenv'
 Dotenv.load
 
