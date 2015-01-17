@@ -1,5 +1,9 @@
 get '/' do
-  erb :welcome
+  if current_user
+    redirect '/search'
+  else
+    erb :welcome
+  end
 end
 
 get '/login' do
@@ -40,7 +44,7 @@ post '/signup' do
 
 end
 
-get '/signout' do
+get '/logout' do
 
   session[:user_id] = nil
   redirect '/'

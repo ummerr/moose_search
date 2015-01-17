@@ -1,7 +1,8 @@
 <div class="all">
 
   <% @searches.each do  |search| %>
-    <%= erb :'search/show' %>
+    <a href="/search/<%= search.id %>"><h1><%= search.term %></h1>
+    <h3><%= search.date_posted %></h3></a>
   <% end %>
 
   <div class="button2">

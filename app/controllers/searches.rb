@@ -1,4 +1,4 @@
-get '/search' do
+get '/search/?' do
 
   erb :'search/main'
 end
@@ -13,12 +13,17 @@ post '/search' do
 end
 
 get '/search/all' do
-  @searches = current_user.searches
+  user = User.find(current_user[:id])
+  @searches = []
+
+  user.searches.all_by_date.each do |search|
+    @searches << search
+  end
+
   erb :'search/all'
 end
 
 get '/search/:id' do |id|
-  p params
   @search = Search.find(id)
   erb :'search/show'
 end

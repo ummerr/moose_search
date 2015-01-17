@@ -1,12 +1,33 @@
+<div class="main_bar">
+
+  <form action="/search" method="POST" >
+    <input type="text" name="search[term]" class="edit_short">
+    <input type="submit" value="" class="search_icon">
+  </form>
+
+</div>
+
+
 <div class="show_results">
 
-  <h4>Results for <%= @search.term %>:</h4>
+  <% unless @search.term == nil %>
+    <h4>Results for <%= @search.term %>:</h4>
+
+      <% unless @search.tweet == nil %>
+        <h4>Twitter:</h4>
+      <% end %>
+
+      <% unless @search.youtube == nil %>
+        <h4>Youtube:</h4>
+          <%  @youtube = @search.youtube %>
+          <%= erb :'youtube/show' %>
+      <% end %>
+
+      <% unless @search.reddit == nil %>
+        <h4>Reddit:</h4>
+      <% end %>
 
 
-  <h4>Twitter:</h4>
-
-  <h4>Youtube:</h4>
-
-  <h4>Reddit:</h4>
+  <% end %>
 
 </div>
