@@ -40,7 +40,7 @@ post '/signup' do
 
 end
 
-get '/signout' do
+get '/logout' do
 
   session[:user_id] = nil
   redirect '/'
