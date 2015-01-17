@@ -19,10 +19,16 @@
 
     <header>
       <a href="/"><img src="/img/eastern-moose_logo.png" class="logo"></a>
-
-
-
     </header>
+
+    <% if current_user  %>
+      <div class="pure-menu pure-menu-open pure-menu-horizontal">
+        <ul>
+            <li class="pure-menu-selected"><a href="#">My Searches</a></li>
+            <li class="pure-menu-selected"><a href="#">Logout</a></li>
+        </ul>
+      </div>
+    <% end %>
 
     <div id="main">
       <%= yield %>
