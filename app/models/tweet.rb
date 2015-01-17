@@ -1,18 +1,25 @@
 module Tweet
 
-  TCLIENT = Twitter::Streaming::Client.new do |config|
-    config.consumer_key        = ENV["CONSUMER_KEY"]
-    config.consumer_secret     = ENV["CONSUMER_SECRET"]
-    config.access_token        = ENV["ACCESS_TOKEN"]
-    config.access_token_secret = ENV["ACCESS_TOKEN_SECRET"]
+  TCLIENT = Twitter::REST::Client.new do |config|
+    config.consumer_key        =
+    config.consumer_secret     =
+    config.access_token        =
+    config.access_token_secret =
   end
 
   def self.twitter_search(string)
-    result = TCLIENT.search(string, result_type: "popular").max_by { |tweet| tweet.retweet_count }
+    # hashed_string = '#' + string
+    result = TCLIENT.search(string, result_type: "popular").first
     if result
-      result.id
+      result.id.to_s
     else
-      nil
+      result = TCLIENT.search(string).max_by(&:retweet_count)
+      if result
+        result.id.to_s
+      else
+        result = TCLIENT.search(string).first
+        result.id.to_s
+      end
     end
   end
 
