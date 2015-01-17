@@ -1,31 +1,45 @@
 get '/search/?' do
-
-  erb :'search/main'
+  if current_user
+    erb :'search/main'
+  else
+    redirect "/"
+  end
 end
 
 
 
 post '/search' do
-  @new_search = Search.create(params[:search])
-  current_user.searches << @new_search
+  if current_user
+    @new_search = Search.create(params[:search])
+    current_user.searches << @new_search
+    redirect "/search/#{@new_search.id}"
+  else
+    redirect "/"
+  end
 
-  redirect "/search/#{@new_search.id}"
 end
 
 get '/search/all' do
-  user = User.find(current_user[:id])
-  @searches = []
-
-  user.searches.all_by_date.each do |search|
-    @searches << search
+  if current_user
+    user = User.find(current_user[:id])
+    @searches = []
+    user.searches.all_by_date.each do |search|
+      @searches << search
+    end
+    erb :'search/all'
+  else
+    redirect "/"
   end
 
-  erb :'search/all'
 end
 
 get '/search/:id' do |id|
-  @search = Search.find(id)
-  erb :'search/show'
+  if current_user
+    @search = Search.find(id)
+    erb :'search/show'
+  else
+    redirect "/"
+  end
 end
 
 
