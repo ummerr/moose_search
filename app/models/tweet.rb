@@ -1,10 +1,10 @@
 module Tweet
 
   TCLIENT = Twitter::REST::Client.new do |config|
-    config.consumer_key        = "Dz1vcQeQjtyuYv4Y0s8uSbJR8"
-    config.consumer_secret     = "PsoklQM9enuWcyCh75Q8dLwydPysKgfIlllMUvtbyjQyIG0qzV"
-    config.access_token        = "204986879-nVYxDYg4PlsQnxLIV49s2DzmCkwf9cijlnY7ogHX"
-    config.access_token_secret = "qd1Z6MJceCbi9QKp0TLOS02356u7DTLGmiYqTiuf6VFHq"
+    config.consumer_key        =
+    config.consumer_secret     =
+    config.access_token        =
+    config.access_token_secret =
   end
 
   def self.twitter_search(string)
