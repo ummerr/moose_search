@@ -13,14 +13,17 @@ post '/search' do
 end
 
 get '/search/all' do
-  @user = User.find(current_user[:id])
+  user = User.find(current_user[:id])
+  @searches = []
 
-  @searches = @user.searches
+  user.searches.each do |search|
+    @searches << search
+  end
+
   erb :'search/all'
 end
 
 get '/search/:id' do |id|
-  p params
   @search = Search.find(id)
   erb :'search/show'
 end

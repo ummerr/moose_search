@@ -26,6 +26,8 @@ require 'bcrypt'
 
 require 'youtube_g'
 
+require 'pry-byebug'
+
 require 'dotenv'
 Dotenv.load
 
