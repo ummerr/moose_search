@@ -3,6 +3,8 @@ get '/search' do
   erb :'search/main'
 end
 
+
+
 post '/search' do
   @new_search = Search.create(params[:search])
   current_user.searches << @new_search
