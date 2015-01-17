@@ -11,7 +11,9 @@ post '/search' do
 end
 
 get '/search/all' do
-  @searches = current_user.searches
+  @user = User.find(current_user[:id])
+
+  @searches = @user.searches
   erb :'search/all'
 end
 
