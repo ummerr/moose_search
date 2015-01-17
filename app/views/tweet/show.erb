@@ -1,14 +1,14 @@
 <style type="text/css">
   #tweet {
     border: 1px;
-    width: 300px;
     border-radius: 5px;
     box-shadow: 2px 2px 10px #888888;
     max-width: 468px;
   }
 
   img {
-    max-height: 100%;
+    max-height: 90%;
+    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -32,25 +32,31 @@
 </style>
 
 <div id="tweet">
-  <% if @search.tweet %>
-    <% tweet_obj = Tweet.return_tweet_object_by_id(@search.tweet) %>
 
+  <% tweet_obj = Tweet.return_tweet_object_by_id(@tweet) %>
+
+  <% if tweet_obj.media? %>
     <div class="image">
       <img src="<%= tweet_obj.media[0]["media_url"].to_s %>">
     </div>
-
-    <div class="user_thumbnail">
-      <img src="<%= tweet_obj.user.profile_image_url.to_s %>">
-    </div>
-
-    <div class="name_and_user_name">
-      <p><%= tweet_obj.user.name %></p>
-      <p><%= tweet_obj.user.screen_name %></p>
-    </div>
-
-    <div class="tweet_text">
-      <% tweet_without_url = tweet_obj.text.gsub!(/(http:\/\/)(.*)/, '').strip %>
-      <p><%= tweet_without_url %> <a href="http://<%= tweet_obj.media[0].url.to_s %>"><%= tweet_obj.media[0].display_url %></a></p>
-    </div>
   <% end %>
+
+  <div class="user_thumbnail">
+    <img src="<%= tweet_obj.user.profile_image_url.to_s %>">
+  </div>
+
+  <div class="name_and_user_name">
+    <p><%= tweet_obj.user.name %></p>
+    <p>@<%= tweet_obj.user.screen_name %></p>
+  </div>
+
+  <div class="tweet_text">
+    <% if tweet_obj.media? %>
+      <% tweet_without_url = tweet_obj.text.gsub(/(http:\/\/)(.*)/, '').strip %>
+      <p><%= tweet_without_url %> <a href="<%= tweet_obj.media[0].url.to_s %>"><%= tweet_obj.media[0].display_url %></a></p>
+    <% else %>
+      <p><%= tweet_obj.text %></p>
+    <% end %>
+  </div>
+
 </div>
