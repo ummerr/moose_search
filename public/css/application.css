@@ -141,11 +141,10 @@ td {
   height: 7em;
 }
 .search_icon {
-  background-image: url('/img/search-icon.png');
-  background-repeat: no-repeat;
-  border: 0;
-  background-color: none;
-  outline: 0;
+  border-style: none;
+  background: url('/img/search-icon.png') no-repeat;
+  width: 22px;
+  height: 22px;
 }
 
 .description {
