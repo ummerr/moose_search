@@ -16,4 +16,8 @@ module Tweet
     end
   end
 
+  def self.return_tweet_object_by_id(id)
+    TCLIENT.status(id)
+  end
+
 end
