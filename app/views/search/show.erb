@@ -13,17 +13,17 @@
   <% unless @search.term == nil %>
     <h4>Results for <%= @search.term %>:</h4>
 
-      <% unless @search.tweet_url == nil %>
+      <% unless @search.tweet == nil %>
         <h4>Twitter:</h4>
       <% end %>
 
-      <% unless @search.youtube_url == nil %>
+      <% unless @search.youtube == nil %>
         <h4>Youtube:</h4>
-          <%  @youtube = @search.youtube_url %>
+          <%  @youtube = @search.youtube %>
           <%= erb :'youtube/show' %>
       <% end %>
 
-      <% unless @search.reddit_url == nil %>
+      <% unless @search.reddit == nil %>
         <h4>Reddit:</h4>
       <% end %>
 
