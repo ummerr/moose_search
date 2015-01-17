@@ -8,4 +8,12 @@ class Search < ActiveRecord::Base
     # self.reddit_url = Reddit.search(self.term, 1)[:url]
   end
 
+  def self.all_by_date
+    Search.all.order(created_at: :desc)
+  end
+
+  def date_posted
+    self.created_at.strftime("%D %R %Z")
+  end
+
 end

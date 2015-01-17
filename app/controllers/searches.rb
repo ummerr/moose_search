@@ -16,7 +16,7 @@ get '/search/all' do
   user = User.find(current_user[:id])
   @searches = []
 
-  user.searches.each do |search|
+  user.searches.all_by_date.each do |search|
     @searches << search
   end
 
