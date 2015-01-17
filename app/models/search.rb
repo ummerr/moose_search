@@ -5,6 +5,7 @@ class Search < ActiveRecord::Base
 
   def get_search_results
     self.youtube = Youtube.youtube_search(self.term)
+    self.tweet = Tweet.twitter_search(string)
     # self.reddit_url = Reddit.search(self.term, 1)[:url]
   end
 
