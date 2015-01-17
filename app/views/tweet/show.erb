@@ -35,6 +35,8 @@
 
   <% tweet_obj = Tweet.return_tweet_object_by_id(@tweet) %>
 
+  <a href="<%= tweet_obj.url.to_s %>">LINK TO ORIGINAL TWEET</a>
+
   <% if tweet_obj.media? %>
     <div class="image">
       <img src="<%= tweet_obj.media[0]["media_url"].to_s %>">
@@ -53,7 +55,7 @@
   <div class="tweet_text">
     <% if tweet_obj.media? %>
       <% tweet_without_url = tweet_obj.text.gsub(/(http:\/\/)(.*)/, '').strip %>
-      <p><%= tweet_without_url %> <a href="<%= tweet_obj.media[0].url.to_s %>"><%= tweet_obj.media[0].display_url %></a></p>
+      <p><%= tweet_without_url %> <a href="<%= tweet_obj.uris[0].attrs[:expanded_url] %>"><%= tweet_obj.uris[0].attrs[:display_url]  %></a></p>
     <% else %>
       <p><%= tweet_obj.text %></p>
     <% end %>
