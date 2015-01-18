@@ -25,4 +25,10 @@
 
   <% end %>
 
+    <form action="/search/<%=@search.id%>" method="POST">
+       <input type="hidden" name="_method" value="DELETE">
+       <input type="hidden" name="search_id" value="<%= @search.id %>">
+      <button type="submit" >Delete entry</button>
+    </form>
+
 </div>
