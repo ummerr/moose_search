@@ -42,6 +42,18 @@ get '/search/:id' do |id|
   end
 end
 
+delete '/search/:id' do |id|
+
+  if current_user
+    @search = Search.find(id)
+    @search.destroy
+    redirect "search"
+  else
+    redirect "/"
+  end
+
+end
+
 
 
 
