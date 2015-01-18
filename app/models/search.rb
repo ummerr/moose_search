@@ -8,7 +8,7 @@ class Search < ActiveRecord::Base
 
     self.youtube = Youtube.youtube_search(self.term)
     self.tweet = Tweet.twitter_search(self.term)
-    
+
   end
 
   def self.all_by_date

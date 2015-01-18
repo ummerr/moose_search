@@ -1,83 +1,11 @@
-/*
-body {font-family: "HelveticaNeue-Light"; font-size: 160%; line-height: 160%; }
-h1, h2, h3, h4, h5, h6 {font-family: "HelveticaNeue-Light"; line-height:100%; margin-top: 0.5em; margin-bottom: 0.5em; color: #36AECC; font-style: italic; font-weight: 400;}
-h1 {font-size: 1.8em;}
-h2 {font-size: 1.6em;}
-h3 {font-size: 1.4em;}
-h4 {font-size: 1.3em;}
-h5 {font-size: 1.2em;}
-h6 {font-size: 1.1em;}
-p, pre, blockquote, table, ul, ol, dl {margin-top: .5em; margin-bottom: .5em;}
-ul ul, ul ol, ol ol, ol ul {margin-top: 0.5em; margin-bottom: 0.5em;}
-li {margin: 0.3em auto;}
-ul {margin-left: .5em; padding-left: 0.5em;}
-dt {font-weight: bold;}
-img {border: none;}
-pre {border-left: 1px solid #ccc; margin-left: 0em; padding-left: 0.5em;}
-blockquote {padding: 0.3em; background-color: #E8F2F5; margin-left:0.5em; margin-right:0;}
-th, td {border: 1px solid #ccc; padding: 0.3em;}
-th {background-color: #f0f0f0;}
-hr {border: none; border-top: 1px solid #E8F2F5; width: 100%;}
-del {text-decoration: line-through; color: #777777;}
-.toc li {list-style-type: none;}
-.todo {font-weight: bold; background-color: #f0ece8; color: #a03020;}
-.justleft {text-align: left;}
-.justright {text-align: right;}
-.justcenter {text-align: center;}
-.center {margin-left: auto; margin-right: auto;}
-
-footer { font-size: 0.7em; margin-top: 2em;}
-
-#content { margin: 0 auto; padding: 0 1em; max-width: 37em; position: relative; width: 61.8%;}
-
-a {
-    color: #666666;
-    text-decoration: none;
-}
-
-a:visited {
-    color: #AAA;
-}
-
-a:hover {
-    color: #000;
-    text-decoration: underline;
-}
-
-
-
-code {
-    font-family: Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
-    -webkit-border-radius: 1px;
-    -moz-border-radius: 1px;
-    border-radius: 1px;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    padding: 0px 3px;
-    display: inline-block;
-    color: #52595d;
-    background-color: #E8F2F5;
-    font-size: 40%;
-    line-height: 1.4em;
-    margin-left: -1em;
-    overflow: auto;
-}
-.logo {
-  height: 7em;
-}*/
-
-
 html, body {
   margin: 40px auto;
   width: 600px;
-  font-family: 'HelveticaNeue-Light', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   text-align: center;
 }
 
-header {
-  margin: 0 0 50px;
-}
+header {margin: 0 0 50px;}
 
 header h1 {
   display: inline;
@@ -99,47 +27,61 @@ header h2 {
   font-size: 1em;
   font-style: italic;
   color: #999999;
-  font-family: 'HelveticaNeue-Light', sans-serif;
   padding: 2%;
 }
 
-h3 {
-  font-size: 1.1em;
-}
+h3 {font-size: 1.1em;}
 
-p {
-  margin-bottom: 5%;
+p {margin-bottom: 5%;}
+
+a {color: #0066CC;}
+
+a:hover {
+  color: #999999;
+  cursor: crosshair;
 }
 
 img {border: none;}
 
 table {
-    margin: 7% 0 2% 0;
+    margin: 7% auto;
     border: 1px solid #333333;
     border-collapse: collapse;
-    width: 100%;
+    width: 90%;
 }
 
 tr {
     margin: 5% 15%;
     width: 60%;
+    padding: 2%;
 }
 
 th {
     text-align: center;
-    padding: 1.5%;
     border: 1px solid #B2B2B2;
-    background-color: #E6E6E6;
 }
 
 td {
-   padding: 5%;
    border: 1px solid #B2B2B2;
+   width: 30%;
+   color: #333333;
 }
 
-.logo {
-  height: 7em;
+td a {color: #999999;}
+
+td a:hover {
+  color: #0066CC;
+  cursor: crosshair;
 }
+
+.logo {height: 7em;}
+
+.search_bar {
+  width: 60%;
+  margin: 2% 0 5% 0;
+  padding: 1% 3%;
+}
+
 .search_icon {
   border-style: none;
   background: url('/img/search-icon.png') no-repeat;
@@ -170,9 +112,11 @@ td {
   display: block;
 }
 
+.crosshair { cursor: crosshair;}
+
 .edit_short {
   width: 60%;
-  margin-bottom: 5%;
+  margin: 5%;
   padding: 1% 3%;
 }
 
@@ -183,38 +127,29 @@ td {
   padding: 1% 3%;
 }
 
-footer {
+.footer {
   margin: 15% 0;
   display: block;
   position: relative;
 }
 
-#main {
-  margin: 0 0 20px;
-}
+#main {margin: 0 0 20px;}
 
 
-/*!
-Pure v0.5.0
-Copyright 2014 Yahoo! Inc. All rights reserved.
-Licensed under the BSD License.
-https://github.com/yui/pure/blob/master/LICENSE.md
-*/
-/*csslint adjoining-classes:false, outline-none:false*/
-/*TODO: Remove this lint rule override after a refactor of this code.*/
+/*================= CSS below this line is an adaptation of Pure v0.5.0 =================*/
 
-.pure-menu ul {
+.menu ul {
     position: absolute;
     visibility: hidden;
 }
 
-.pure-menu.pure-menu-open {
+.menu.menu-open {
     visibility: visible;
     z-index: 2;
     width: 100%;
 }
 
-.pure-menu ul {
+.menu ul {
     left: -10000px;
     list-style: none;
     margin: 0;
@@ -223,22 +158,22 @@ https://github.com/yui/pure/blob/master/LICENSE.md
     z-index: 1;
 }
 
-.pure-menu > ul { position: relative; }
+.menu > ul { position: relative; }
 
-.pure-menu-open > ul {
+.menu-open > ul {
     left: 0;
     top: 0;
     visibility: visible;
 }
 
-.pure-menu-open > ul:focus {
+.menu-open > ul:focus {
     outline: 0;
 }
 
-.pure-menu li { position: relative; }
+.menu li { position: relative; }
 
-.pure-menu a,
-.pure-menu .pure-menu-heading {
+.menu a,
+.menu .menu-heading {
     display: block;
     color: inherit;
     line-height: 1.5em;
@@ -247,36 +182,41 @@ https://github.com/yui/pure/blob/master/LICENSE.md
     white-space: nowrap;
 }
 
-.pure-menu.pure-menu-horizontal > .pure-menu-heading {
+.menu.menu-horizontal > .menu-heading {
     display: inline-block;
     *display: inline;
     zoom: 1;
     margin: 0;
     vertical-align: middle;
 }
-.pure-menu.pure-menu-horizontal > ul {
+.menu.menu-horizontal > ul {
     display: inline-block;
     *display: inline;
     zoom: 1;
     vertical-align: middle;
 }
 
-.pure-menu li a { padding: 5px 20px; }
+.menu li a {
+  padding: 5px 20px;
+}
 
-.pure-menu-can-have-children > .pure-menu-label:after {
+.menu li a:hover {
+  color: #0066CC;
+  text-decoration: underline;
+}
+
+.menu-can-have-children > .menu-label:after {
     content: '\25B8';
     float: right;
-    /* These specific fonts have the Unicode char we need. */
-    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'DejaVu Sans', sans-serif;
     margin-right: -20px;
     margin-top: -1px;
 }
 
-.pure-menu-can-have-children > .pure-menu-label {
+.menu-can-have-children > .menu-label {
     padding-right: 30px;
 }
 
-.pure-menu-separator {
+.menu-separator {
     background-color: #dfdfdf;
     display: block;
     height: 1px;
@@ -285,12 +225,12 @@ https://github.com/yui/pure/blob/master/LICENSE.md
     overflow: hidden;
 }
 
-.pure-menu-hidden {
+.menu-hidden {
     display: none;
 }
 
 /* FIXED MENU */
-.pure-menu-fixed {
+.menu-fixed {
     position: fixed;
     top: 0;
     left: 0;
@@ -298,10 +238,10 @@ https://github.com/yui/pure/blob/master/LICENSE.md
 }
 
 
-/* HORIZONTAL MENU CODE */
+/* HORIZONTAL MENU */
 
 /* Initial menus should be inline-block so that they are horizontal */
-.pure-menu-horizontal li {
+.menu-horizontal li {
     display: inline-block;
     *display: inline;
     zoom: 1;
@@ -309,28 +249,28 @@ https://github.com/yui/pure/blob/master/LICENSE.md
 }
 
 /* Submenus should still be display: block; */
-.pure-menu-horizontal li li {
+.menu-horizontal li li {
     display: block;
 }
 
 /* Content after should be down arrow */
-.pure-menu-horizontal > .pure-menu-children > .pure-menu-can-have-children > .pure-menu-label:after {
+.menu-horizontal > .menu-children > .menu-can-have-children > .menu-label:after {
     content: "\25BE";
 }
 /*Add extra padding to elements that have the arrow so that the hover looks nice */
-.pure-menu-horizontal > .pure-menu-children > .pure-menu-can-have-children > .pure-menu-label {
+.menu-horizontal > .menu-children > .menu-can-have-children > .menu-label {
     padding-right: 30px;
 }
 
 /* Adjusting separator for vertical menus */
-.pure-menu-horizontal li.pure-menu-separator {
+.menu-horizontal li.menu-separator {
   height: 50%;
   width: 1px;
   margin: 0 7px;
 }
 
 /* Submenus should be horizontal separator again */
-.pure-menu-horizontal li li.pure-menu-separator {
+.menu-horizontal li li.menu-separator {
   height: 1px;
   width: auto;
   margin: 7px 2px;

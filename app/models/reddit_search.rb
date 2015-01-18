@@ -1,5 +1,5 @@
 class RedditSearch < ActiveRecord::Base
-  
+
   belongs_to :search
 
   def self.search(term, result_number)

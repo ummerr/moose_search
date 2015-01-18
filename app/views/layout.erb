@@ -6,10 +6,13 @@
 
   <link rel="stylesheet" href="/css/application.css">
 
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
   <title>Moose Search</title>
+
 </head>
 
 
@@ -22,10 +25,10 @@
     </header>
 
     <% if current_user  %>
-      <div class="pure-menu pure-menu-open pure-menu-horizontal">
+      <div class="menu menu-open menu-horizontal">
         <ul>
-            <li class="pure-menu-selected"><a href="/search/all">My Searches</a></li>
-            <li class="pure-menu-selected"><a href="/logout">Logout</a></li>
+            <li class="menu-selected"><a href="/search/all">MY SEARCHES</a></li>
+            <li class="menu-selected"><a href="/logout">LOGOUT</a></li>
         </ul>
       </div>
     <% end %>
@@ -37,4 +40,5 @@
   </div>
 
 </body>
+
 </html>

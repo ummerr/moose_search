@@ -1,10 +1,10 @@
-10.times do
-  e = User.new({name: Faker::Internet.user_name, email: Faker::Internet.safe_email})
-  3.times do
-    e.searches << Search.create({term: Faker::Address.state, youtube_url: "https://www.youtube.com/watch?v=XYQK3VAUN9Y", tweet_url: "https://twitter.com/AGoldmund/status/537332650537914368", reddit_url: "www.reddit.com"})
-  end
-  e.save
-end
+# 10.times do
+#   e = User.new({name: Faker::Internet.user_name, email: Faker::Internet.safe_email})
+#   3.times do
+#     e.searches << Search.create({term: Faker::Address.state, youtube_url: "https://www.youtube.com/watch?v=XYQK3VAUN9Y", tweet_url: "https://twitter.com/AGoldmund/status/537332650537914368", reddit_url: "www.reddit.com"})
+#   end
+#   e.save
+# end
 
 
 # 11.times do

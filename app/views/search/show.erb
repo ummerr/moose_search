@@ -1,17 +1,9 @@
-<div class="main_bar">
-
-  <form action="/search" method="POST" >
-    <input type="text" name="search[term]" class="edit_short">
-    <input type="submit" value="" class="search_icon">
-  </form>
-
-</div>
-
+<%= erb :'/search/main' %>
 
 <div class="show_results">
 
   <% unless @search.term == nil %>
-    <h4>Results for <%= @search.term %>:</h4>
+    <h1>Results for <span style="color: #0066CC"><%= @search.term %></span>:</h1>
 
       <% unless @search.tweet == nil %>
         <h4>Twitter:</h4>
@@ -26,6 +18,9 @@
       <% end %>
 
 
+        <h4>Reddit:</h4>
+          <%  @reddit = @search.RedditSearches %>
+          <%= erb :'reddit/show' %>
 
 
   <% end %>
