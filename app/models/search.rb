@@ -1,8 +1,7 @@
 class Search < ActiveRecord::Base
   belongs_to :user
   has_many :RedditSearches
-  before_save :get_search_results
-  after_save :get_reddit_results
+  before_save :get_search_results, :get_reddit_results
 
   def get_search_results
 
