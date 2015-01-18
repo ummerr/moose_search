@@ -47,7 +47,7 @@ delete '/search/:id' do |id|
   if current_user
     @search = Search.find(id)
     @search.destroy
-    redirect "search"
+    redirect "/search/all"
   else
     redirect "/"
   end
