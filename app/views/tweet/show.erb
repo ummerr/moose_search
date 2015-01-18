@@ -16,11 +16,11 @@
     </div>
 
     <div class="tweet_text">
-      <% if tweet_obj.media? %>
-        <% tweet_without_url = tweet_obj.text.gsub(/(http:\/\/)(.*)/, '').strip %>
+    <% tweet_without_url = tweet_obj.text.gsub(/(http:\/\/)(.*)/, '').strip %>
+      <% if tweet_obj.uris[0] %>
         <p><%= tweet_without_url %> <a href="<%= tweet_obj.uris[0].attrs[:expanded_url] %>"><%= tweet_obj.uris[0].attrs[:display_url]  %></a></p>
       <% else %>
-        <p><%= tweet_obj.text %></p>
+        <p><%= tweet_without_url %></p>
       <% end %>
     </div>
 
