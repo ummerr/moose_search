@@ -1,6 +1,10 @@
  <div class="reddit">
-    <% @reddit.each do |post| %>
-      <%= post.title %>
-      <%= post.url %>
-    <% end %>
+    <div class="reddit_container">
+      <% @reddit.each do |post| %>
+        <div class="reddit_post">
+          <strong><%= post.title %>:</strong>
+          <p><a href="<%=post.url%>" target="_blank"><%= post.url %></a></p>
+        </div>
+      <% end %>
+    </div>
  </div>
