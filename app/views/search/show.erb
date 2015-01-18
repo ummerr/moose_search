@@ -17,11 +17,11 @@
           <%= erb :'youtube/show' %>
       <% end %>
 
-      <% unless @search.reddit == nil %>
+
         <h4>Reddit:</h4>
-          <%  @reddit = @search.reddit %>
+          <%  @reddit = @search.RedditSearches %>
           <%= erb :'reddit/show' %>
-      <% end %>
+
 
   <% end %>
 
