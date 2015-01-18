@@ -4,23 +4,34 @@
 
   <% unless @search.term == nil %>
     <h1>Results for <span style="color: #0066CC"><%= @search.term %></span>:</h1>
+    <hr>
 
-      <% unless @search.tweet == nil %>
+    <% unless @search.tweet == nil %>
+      <div class="media_title">
+        <img src="/img/twitter_logo.png">
         <h4>Twitter:</h4>
-        <% @tweet = @search.tweet %>
-        <%= erb :'tweet/show' %>
-      <% end %>
+      </div>
+      <% @tweet = @search.tweet %>
+      <%= erb :'tweet/show' %>
+    <% end %>
 
-      <% unless @search.youtube == nil %>
+    <% unless @search.youtube == nil %>
+      <div class="media_title">
+        <img src="/img/youtube_logo.png">
         <h4>Youtube:</h4>
-          <%  @youtube = @search.youtube %>
-          <%= erb :'youtube/show' %>
-      <% end %>
+      </div>
+      <%  @youtube = @search.youtube %>
+      <%= erb :'youtube/show' %>
+    <% end %>
 
-
+    <% unless @search.RedditSearches == nil %>
+      <div class="media_title">
+        <img src="/img/reddit_logo.png">
         <h4>Reddit:</h4>
-          <%  @reddit = @search.RedditSearches %>
-          <%= erb :'reddit/show' %>
+      </div>
+      <%  @reddit = @search.RedditSearches %>
+      <%= erb :'reddit/show' %>
+    <% end %>
 
 
   <% end %>
