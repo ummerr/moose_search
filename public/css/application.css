@@ -126,6 +126,16 @@ td a:hover {
   padding: 1% 3%;
 }
 
+.delete_button_cell {
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: solid 0 #B2B2B2;
+  width: 10%;
+  border-collapse: collapse;
+  padding-left: 2%;
+}
+
 .media_title {
   font-size: 1.1em;
   font-weight: 900;
