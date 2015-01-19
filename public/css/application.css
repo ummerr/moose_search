@@ -45,7 +45,6 @@ img {border: none;}
 
 table {
   margin: 7% auto;
-  border: 1px solid #333333;
   border-collapse: collapse;
   width: 90%;
 }
@@ -74,7 +73,7 @@ td a:hover {
   cursor: crosshair;
 }
 
-.logo {height: 7em;}
+.logo {height: 10em;}
 
 .search_bar {
   width: 60%;
@@ -125,6 +124,16 @@ td a:hover {
   height: 100px;
   margin-bottom: 5%;
   padding: 1% 3%;
+}
+
+.delete_button_cell {
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: solid 0 #B2B2B2;
+  width: 10%;
+  border-collapse: collapse;
+  padding-left: 2%;
 }
 
 .media_title {

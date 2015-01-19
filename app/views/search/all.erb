@@ -11,6 +11,13 @@
         <td>
           <%= search.date_posted %>
         </td>
+        <td class="delete_button_cell">
+            <form action="/search/<%=search.id%>" method="POST">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="hidden" name="search_id" value="<%= search.id %>">
+              <button type="submit" >Delete</button>
+            </form>
+        </td>
       </tr>
     <% end %>
   </table>
